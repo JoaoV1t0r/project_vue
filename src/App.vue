@@ -1,32 +1,75 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+      <v-navigation-drawer app>
+          <div class="ma-12 pa-12">
+          <v-card>
+            <v-navigation-drawer
+              permanent
+              expand-on-hover
+            >
+              <v-list>
+                <v-list-item class="px-2">
+                  <v-list-item-avatar>
+                    <v-img src="https://randomuser.me/api/portraits/women/85.jpg"></v-img>
+                  </v-list-item-avatar>
+                </v-list-item>
+
+                <v-list-item link>
+                  <v-list-item-content>
+                    <v-list-item-title class="text-h6">
+                      Sandra Adams
+                    </v-list-item-title>
+                    <v-list-item-subtitle>sandra_a88@gmail.com</v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+
+              <v-divider></v-divider>
+
+              <v-list
+                nav
+                dense
+              >
+                <v-list-item link>
+                  <v-list-item-icon>
+                    <v-icon>mdi-folder</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>My Files</v-list-item-title>
+                </v-list-item>
+                <v-list-item link>
+                  <v-list-item-icon>
+                    <v-icon>mdi-account-multiple</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>Shared with me</v-list-item-title>
+                </v-list-item>
+                <v-list-item link>
+                  <v-list-item-icon>
+                    <v-icon>mdi-star</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>Starred</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-navigation-drawer>
+          </v-card>
+        </div>
+      </v-navigation-drawer>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import Vue from 'vue';
 
-#nav {
-  padding: 30px;
-}
+export default Vue.extend({
+  name: 'App',
+  components:{
+    
+  },
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+  }),
+});
+</script>
